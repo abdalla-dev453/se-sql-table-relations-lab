@@ -106,7 +106,7 @@ WHERE od.productCode IN (
     GROUP BY od_sub.productCode
     HAVING COUNT(DISTINCT o_sub.customerNumber) < 20
 )
-ORDER BY e.firstName ASC
+ORDER BY e.lastName, e.firstName ASC
 """, conn)
 
 conn.close()
